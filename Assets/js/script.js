@@ -20,11 +20,6 @@ var timerCount;
 console.log(startButton);
 
 startButton[0].addEventListener("click", function(){
-    if (questionCard.style.display === "none") {    
         questionCard.style.display = "flex";
         startPage.style.display = "none";
-    } else {
-        questionCard.style.display = "none";
-        startPage.style.display = "flex";
-    }
 });
