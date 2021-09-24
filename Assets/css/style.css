@@ -11,12 +11,14 @@
 
 /* moving time off edge of page */
 #time {
-    margin-right: 3%;
+    margin-right: 4%;
+    display: flex;
+
 }
 
 /* moving HS off edge of page */
 #highscores {
-    margin-left: 3%;
+    margin-left: 4%;
 }
 
 /* centering start page */
@@ -51,4 +53,13 @@ button {
 /* removing bullet styling from multiple choice answers */
 .quiz-questions ul {
     list-style-type: none;
+}
+
+/* centering results page */
+#results-page {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
