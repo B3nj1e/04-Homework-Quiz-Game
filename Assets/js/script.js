@@ -19,11 +19,11 @@ var timer;
 var timerCount;
 
 // declaring question and answer string variable using arrays
-var questionArray = ["What does HTML stand for?", "What does CSS stand for?"];
-var A1 = ["1. Hyper Trainer Marking Language", "1. Cascade Standing Sheet"];
-var A2 = ["2. Hyper Text Marketing Language", "2. Computer Styling Sheet"];
-var A3 = ["3. Hyper Text Markup Language", "3. Cascade Super Styling"];
-var A4 = ["4. Hyper Text Markup Leveler", "4. Cascade Styling Sheet"];
+var questionArray = ["What does HTML stand for?", "What does CSS stand for?", "What is the cloud?"];
+var A1 = ["1. Hyper Trainer Marking Language", "1. Cascade Standing Sheet", "Water vapour"];
+var A2 = ["2. Hyper Text Marketing Language", "2. Computer Styling Sheet", "Remote online storage"];
+var A3 = ["3. Hyper Text Markup Language", "3. Cascade Super Styling", "The land of the gods"];
+var A4 = ["4. Hyper Text Markup Leveler", "4. Cascade Styling Sheet", "Local storage"];
 
 // correct answers = A3[0], A4[1]
 
@@ -66,17 +66,34 @@ function quizSetUp() {
     return;
 }}
 
+// moving question and answers to next set
+x = 0;
+function quizProgression() {
+    question.textContent = questionArray[x];
+    answer1.textContent = A1[x];
+    answer2.textContent = A2[x];
+    answer3.textContent = A3[x];
+    answer4.textContent = A4[x];
+    return;
+}
+
 for (i = 0; i < answerButtons.length; i++) { 
         answerButtons[i].addEventListener("click", function(){
         function answer(event) {
             console.log(event.target.textContent);
-            if (event.target.textContent === A3[0]) {
+            if (event.target.textContent === A3[0] || event.target.textContent === A4[1] || event.target.textContent === A2[2]) {
                 result.textContent = "Correct";
                 scoreTally++;
                 console.log(scoreTally);
-                quizSetUp();
+                x++;
+                console.log(x);
+                quizProgression();
             } else {
                 result.textContent = "Incorrect";
+                console.log(scoreTally);
+                x++;
+                console.log(x);
+                quizProgression();
             }
         }
         answer(event);
