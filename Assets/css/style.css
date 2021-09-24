@@ -1,0 +1,26 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;   
+}
+
+/* spacing time and HS children in header */
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* moving time off edge of page */
+#time {
+    margin-right: 3%;
+}
+
+/* moving HS off edge of page */
+#highscores {
+    margin-left: 3%;
+}
+
+/* centering quiz question */
+.quiz-questions {
+    display: flex;
+    justify-content: space-around;
+}
