@@ -1,11 +1,10 @@
 console.log("test");
 
-// to hide/show quiz cards. document.getElementById("Q1").style.display = "none";
-
 var questionCard = document.querySelector(".quiz-questions"); 
 var startPage = document.querySelector(".start-page");
 var resultsPage = document.querySelector("#results-page")
-var question = document.querySelector("question");
+var question = document.querySelector("#question");
+var answerButtons = document.querySelectorAll("#one, #two, #three, #four");
 var answer1 = document.querySelector("#one");
 var answer2 = document.querySelector("#two");
 var answer3 = document.querySelector("#three");
@@ -19,7 +18,17 @@ var scoreTotal = 0;
 var timer;
 var timerCount;
 
+// declaring question and answer string variable using arrays
+var questionArray = ["What does HTML stand for?", "What does CSS stand for?"];
+var A1 = ["1. Hyper Trainer Marking Language", "1. Cascade Standing Sheet"];
+var A2 = ["2. Hyper Text Marketing Language", "2. Computer Styling Sheet"];
+var A3 = ["3. Hyper Text Markup Language", "3. Cascade Super Styling"];
+var A4 = ["4. Hyper Text Markup Leveler", "4. Cascade Styling Sheet"];
+
+// correct answers = A3[0], A4[3]
+
 console.log(startButton);
+console.log(answerButtons)
 
 // adding event listener to start button, initiating 1st question, starting time
 startButton[0].addEventListener("click", function(){
@@ -28,6 +37,7 @@ startButton[0].addEventListener("click", function(){
         resultsPage.style.display = "none";
         timerCount = 60;
         startTimer();
+        quizSetUp();
 });
 
 // function for setting time and counting down until 0 seconds, then high scores page is called
@@ -43,3 +53,31 @@ function startTimer() {
     }, 1000);
     
 }
+
+function quizSetUp() {
+    for (i = 0; i < questionArray.length; i++) {
+    question.textContent = questionArray[i];
+    answer1.textContent = A1[i];
+    answer2.textContent = A2[i];
+    answer3.textContent = A3[i];
+    answer4.textContent = A4[i];
+    return;
+    }
+}
+
+for (i = 0; i < answerButtons.length; i++) { 
+    answerButtons[i].addEventListener("click", function(){
+    function answer(event) {
+        console.log(event.target)
+        if (question === questionArray[0] && event.target === answerButtons[2]) {
+            result.textContent = "Correct";
+        } else {
+            result.textContent = "Incorrect";
+        }
+    }
+    answer(event);
+    
+});
+}
+
+
