@@ -25,10 +25,11 @@ var A2 = ["2. Hyper Text Marketing Language", "2. Computer Styling Sheet"];
 var A3 = ["3. Hyper Text Markup Language", "3. Cascade Super Styling"];
 var A4 = ["4. Hyper Text Markup Leveler", "4. Cascade Styling Sheet"];
 
-// correct answers = A3[0], A4[3]
+// correct answers = A3[0], A4[1]
 
 console.log(startButton);
 console.log(answerButtons)
+console.log(A1);
 
 // adding event listener to start button, initiating 1st question, starting time
 startButton[0].addEventListener("click", function(){
@@ -54,6 +55,7 @@ function startTimer() {
     
 }
 
+// setting quiz questions and answers using arrays
 function quizSetUp() {
     for (i = 0; i < questionArray.length; i++) {
     question.textContent = questionArray[i];
@@ -62,22 +64,22 @@ function quizSetUp() {
     answer3.textContent = A3[i];
     answer4.textContent = A4[i];
     return;
-    }
-}
+}}
 
 for (i = 0; i < answerButtons.length; i++) { 
-    answerButtons[i].addEventListener("click", function(){
-    function answer(event) {
-        console.log(event.target)
-        if (question === questionArray[0] && event.target === answerButtons[2]) {
-            result.textContent = "Correct";
-        } else {
-            result.textContent = "Incorrect";
+        answerButtons[i].addEventListener("click", function(){
+        function answer(event) {
+            console.log(event.target.textContent);
+            if (event.target.textContent === A3[0]) {
+                result.textContent = "Correct";
+                scoreTally++;
+                console.log(scoreTally);
+                quizSetUp();
+            } else {
+                result.textContent = "Incorrect";
+            }
         }
-    }
-    answer(event);
+        answer(event);
     
-});
-}
-
-
+    });
+};
