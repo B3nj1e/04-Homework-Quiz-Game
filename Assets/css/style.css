@@ -19,8 +19,36 @@
     margin-left: 3%;
 }
 
+/* centering start page */
+.start-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* sizing start button */
+.start-page button {
+    width: 100px;
+}
+
 /* centering quiz question */
 .quiz-questions {
     display: flex;
     justify-content: space-around;
+    display: none;
+}
+
+/* multiple choice button option styling */
+button {
+    background-color: rgb(58, 143, 255);
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 2%;
+}
+
+/* removing bullet styling from multiple choice answers */
+.quiz-questions ul {
+    list-style-type: none;
 }
