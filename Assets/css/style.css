@@ -63,3 +63,10 @@ button {
     align-items: center;
     text-align: center;
 }
+
+#submit {
+    background-color: rgb(58, 143, 255);
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 2%;
+}

@@ -14,6 +14,11 @@ var startButton = document.querySelectorAll("#start");
 var timerElement = document.querySelector("#timer");
 var scoreTally = 0;
 var scoreTotal = 0;
+var scoreDisplay = document.querySelector("#score-display");
+var initials = document.querySelector("#initials");
+var submitButton = document.querySelector("#submit");
+var A = document.querySelector("#A");
+var goBackButton = document.querySelector("#go-back");
 
 var timer;
 var timerCount;
@@ -28,11 +33,14 @@ var A4 = ["4. Hyper Text Markup Leveler", "4. Cascade Styling Sheet", "Local sto
 // correct answers = A3[0], A4[1]
 
 console.log(startButton);
-console.log(answerButtons)
+console.log(answerButtons);
 console.log(A1);
+console.log(A);
+
 
 // adding event listener to start button, initiating 1st question, starting time
-startButton[0].addEventListener("click", function(){
+startButton[0].addEventListener("click", function(event){
+        event.preventDefault;
         questionCard.style.display = "flex";
         startPage.style.display = "none";
         resultsPage.style.display = "none";
@@ -48,10 +56,12 @@ function startTimer() {
         timerElement.textContent = timerCount;
         if (timerCount <= 0) {
         clearInterval(timer);
-        // tally score
-        // bring up resultsPage
+        // display final score
+        // bring up resultsPage when time hits 0
         questionCard.style.display = "none";
         resultsPage.style.display = "flex";
+        scoreDisplay.textContent = "Your final score is " + scoreTally;
+        console.log(initials.textContent);
         }
     }, 1000);
 }
@@ -106,7 +116,47 @@ for (i = 0; i < answerButtons.length; i++) {
 };
 
 
-// once results have been submitted
-function highscores() {
-window.location = "highscores.html";
+// saving score to local storage
+function saveScore() {
+    var highscore = {
+        highscore: scoreTally,
+        initials: initials.value,
+        };
+    console.log(highscore)
+    localStorage.setItem("score", JSON.stringify(highscore));    
 }
+
+// retriving HS from local storage
+function renderHighScore() {
+    var lastHighScore = JSON.parse(localStorage.getItem("score"))
+    if (lastHighScore !== null) {
+        A.value = lastHighScore;
+    } else  {
+        return;
+    }
+}
+
+// open scores page and render results
+function openHighscores() {
+    window.location = "highscores.html";
+    event.preventDefault();
+    renderHighScore();
+}
+
+// event listner for submit high score, adding to local storage
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    saveScore(); 
+    openHighscores();
+})
+
+// function to return to quiz
+function goBack() {
+    window.location = "index.html";
+}
+
+// event listner for goback button
+goBackButton.addEventListener("click", function(event) {
+    event.preventDefault;
+    goBack();
+})
