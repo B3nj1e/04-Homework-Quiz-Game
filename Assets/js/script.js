@@ -17,8 +17,6 @@ var scoreTotal = 0;
 var scoreDisplay = document.querySelector("#score-display");
 var initials = document.querySelector("#initials");
 var submitButton = document.querySelector("#submit");
-var A = document.querySelector("#A");
-var goBackButton = document.querySelector("#go-back");
 
 var timer;
 var timerCount;
@@ -115,7 +113,6 @@ for (i = 0; i < answerButtons.length; i++) {
     });
 };
 
-
 // saving score to local storage
 function saveScore() {
     var highscore = {
@@ -126,21 +123,10 @@ function saveScore() {
     localStorage.setItem("score", JSON.stringify(highscore));    
 }
 
-// retriving HS from local storage
-function renderHighScore() {
-    var lastHighScore = JSON.parse(localStorage.getItem("score"))
-    if (lastHighScore !== null) {
-        A.value = lastHighScore;
-    } else  {
-        return;
-    }
-}
-
 // open scores page and render results
 function openHighscores() {
-    window.location = "highscores.html";
     event.preventDefault();
-    renderHighScore();
+    window.location = "highscores.html";
 }
 
 // event listner for submit high score, adding to local storage
@@ -148,15 +134,4 @@ submitButton.addEventListener("click", function(event) {
     event.preventDefault();
     saveScore(); 
     openHighscores();
-})
-
-// function to return to quiz
-function goBack() {
-    window.location = "index.html";
-}
-
-// event listner for goback button
-goBackButton.addEventListener("click", function(event) {
-    event.preventDefault;
-    goBack();
 })
