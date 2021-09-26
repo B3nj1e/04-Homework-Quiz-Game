@@ -33,7 +33,6 @@ var A4 = ["4. Hyper Text Markup Leveler", "4. Cascade Styling Sheet", "Local sto
 console.log(startButton);
 console.log(answerButtons);
 console.log(A1);
-console.log(A);
 
 
 // adding event listener to start button, initiating 1st question, starting time
@@ -119,7 +118,9 @@ function saveScore() {
         highscore: scoreTally,
         initials: initials.value,
         };
-    console.log(highscore)
+    console.log(highscore);
+    console.log(highscore.highscore);
+    console.log(highscore.initials);
     localStorage.setItem("score", JSON.stringify(highscore));    
 }
 
