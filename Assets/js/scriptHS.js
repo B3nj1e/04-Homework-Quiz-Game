@@ -3,6 +3,7 @@ console.log("test");
 var highScoreList = document.querySelector("#highscore-list");
 var highScoreCount = document.querySelector("#highscore-count");
 var goBackButton = document.querySelector("#go-back");
+var clearButton = document.querySelector("#clear");
 
 var hs = [""];
 
@@ -44,3 +45,8 @@ goBackButton.addEventListener("click", function(event) {
     event.preventDefault;
     goBack();
 })
+
+clearButton.addEventListener("click", function() {
+    highScoreList.textContent = " ";
+    highScoreCount.textContent = "";
+});
