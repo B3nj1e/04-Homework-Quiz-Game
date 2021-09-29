@@ -1,89 +1,69 @@
-# 04 Web APIs: Code Quiz
+# 04 Homework - Quiz Game
 
-## Your Task
+## Start page
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
-
-To help familiarize you with these tests and allow you to use the skills covered in this unit, this week’s homework invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
-
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
-
-## User Story
-
+![Quiz home page](./Assets/images/picture1.png)
 ```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+The start card is displayed, and all other none relevent cards are hidden. 
+Timer top right corner
+Highscore hyperkink top left corner
+Start button centrally
 ```
 
-## Acceptance Criteria
+## Q&A 1
+
+![First quiz question](./Assets/images/picture2.png)
+```
+Upon clicking the start button, the start card is hidden
+quiz question card displayed
+Question text is non-interactive
+Answers are buttons, to submit an answer the button is clicked
+timer starts at 30 seconds, minus 1 per second
 
 ```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
+
+## Q&A 2
+
+![second quiz question](./Assets/images/picture3.png)
+```
+Upon clicking the answer button on the previous slide:
+-the text content in automatically replaced from Q1 to Q2
+-result from the previous question is displayed at the bottom; correct/incorrect. Incorrect answer
+-if the previous answer was incorrect -10 off the timer
+
 ```
 
-## Mock-Up
+## Q&A 3
 
-The following animation demonstrates the application functionality:
+![third quiz question](./Assets/images/picture4.png)
+```
+Upon clicking the answer button on the previous slide:
+-the text content in automatically replaced from Q1 to Q2
+-result from the previous question is displayed at the bottom; last one was correct
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
+```
 
-## Grading Requirements
+## Finish page, submit score
 
-This homework is graded based on the following criteria: 
+![finish page, prompt to submit score](./Assets/images/picture5.png)
+```
+Once the timer is <= 0, the finish card is displayed and all other card hidden
+Presented with total score tally
+Presented with form to submit initial for recording
 
-### Technical Acceptance Criteria: 40%
+```
 
-* Satisfies all of the preceding acceptance criteria.
+## High scores page
 
-### Deployment: 32%
+![high scores](./Assets/images/picture6.png)
+![high scores](./Assets/images/picture7.png)
+```
+Once the submit button is clicked for the initials, it is set to the local storage, then render from the local storage to the high scores tally
+Clear button removes high scores
+Go back button returns to main index.html/start page
 
-* Application deployed at live URL.
+```
 
-* Application loads with no errors.
 
-* Application GitHub URL submitted.
 
-* GitHub repository contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+To access github repository please click [here](https://github.com/B3nj1e/04-Homework-Quiz-Game). To access webpage please click [here](https://b3nj1e.github.io/04-Homework-Quiz-Game/). 
